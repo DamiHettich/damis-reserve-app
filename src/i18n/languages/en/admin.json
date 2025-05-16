@@ -1,0 +1,144 @@
+{
+  "booking": {
+    "title": "Booking Management",
+    "search": "Search bookings...",
+    "filters": {
+      "allStatus": "All Status",
+      "confirmed": "Confirmed",
+      "pending": "Pending",
+      "cancelled": "Cancelled",
+      "completed": "Completed",
+      "noShow": "No Show"
+    },
+    "table": {
+      "customer": "Customer",
+      "date": "Date",
+      "service": "Service",
+      "status": "Status",
+      "payment": "Payment",
+      "actions": "Actions"
+    },
+    "actions": {
+      "contact": "Contact",
+      "remind": "Remind",
+      "cancel": "Cancel Booking"
+    },
+    "details": {
+      "title": "Booking Details",
+      "customerInfo": "Customer Information",
+      "bookingStatus": "Booking Status",
+      "notes": "Notes",
+      "contactCustomer": "Contact Customer",
+      "sendReminder": "Send Reminder"
+    },
+    "status": {
+      "confirmed": "Confirmed",
+      "pending": "Pending",
+      "cancelled": "Cancelled",
+      "completed": "Completed",
+      "no-show": "No Show",
+      "paid": "Paid",
+      "refunded": "Refunded"
+    },
+    "paymentStatus": {
+      "paid": "Paid",
+      "pending": "Pending",
+      "refunded": "Refunded"
+    }
+  },
+  "calendar": {
+    "title": "Calendar Management",
+    "selectedBooking": "Selected Booking",
+    "upcomingBookings": "Upcoming Bookings",
+    "fields": {
+      "customer": "Customer",
+      "email": "Email",
+      "date": "Date",
+      "time": "Time",
+      "price": "Price",
+      "status": "Status"
+    },
+    "actions": {
+      "cancelBooking": "Cancel Booking",
+      "sendReminder": "Send Reminder"
+    },
+    "views": {
+      "week": "Week",
+      "day": "Day",
+      "today": "Today"
+    },
+    "navigation": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "messages": {
+      "noEvents": "No appointments in this time range"
+    }
+  },
+  "availability": {
+    "title": "Availability Schedule",
+    "slotTitle": "Available",
+    "instructions": {
+      "title": "Instructions",
+      "items": [
+        "Click on the calendar to toggle availability for that time slot",
+        "Blue slots indicate available times",
+        "Click again on a blue slot to remove it",
+        "The schedule will repeat weekly"
+      ]
+    },
+    "actions": {
+      "reset": "Reset",
+      "save": "Save Schedule"
+    },
+    "unsavedChanges": "You have unsaved changes"
+  },
+  "configuration": {
+    "title": "App Configuration",
+    "actions": {
+      "save": "Save Changes"
+    },
+    "sections": {
+      "slots": {
+        "title": "Hours of Operation",
+        "duration": "Slot Duration (minutes)",
+        "operatingHours": "Operating Hours",
+        "durations": {
+          "30": "30 minutes",
+          "60": "1 hour",
+          "90": "1.5 hours",
+          "120": "2 hours"
+        }
+      },
+      "pricing": {
+        "title": "Pricing",
+        "basePrice": "Base Price",
+        "reservationFee": "Reservation Fee",
+        "cancellationFee": "Cancellation Fee"
+      },
+      "cancellation": {
+        "title": "Cancellation Policy",
+        "deadline": "Cancellation Deadline (hours before)",
+        "lateFee": "Late Cancellation Fee",
+        "cutoff": "No Cancellation (hours before)"
+      },
+      "theme": {
+        "title": "Theme Configuration",
+        "colors": {
+          "primary": "Primary Color",
+          "secondary": "Secondary Color",
+          "accent": "Accent Color"
+        }
+      },
+      "notifications": {
+        "title": "Notification Configuration",
+        "email": "Email Notifications",
+        "whatsapp": "WhatsApp Notifications",
+        "reminderTimes": "Reminder Times (hours before appointment)",
+        "addReminder": "Add Reminder",
+        "beforeAppointment": "before appointment",
+        "removeReminder": "Remove reminder"
+      }
+    }
+  }
+} 

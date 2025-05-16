@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "calendar": "Calendar",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "admin": {
+      "calendar": "Calendar",
+      "bookings": "Bookings",
+      "availability": "Availability",
+      "configuration": "Configuration"
+    }
+  },
+  "auth": {
+    "login": "Login",
+    "signup": "Sign Up",
+    "logout": "Logout"
+  },
+  "buttons": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "back": "Back"
+  }
+}

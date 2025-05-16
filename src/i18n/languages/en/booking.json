@@ -1,0 +1,59 @@
+{
+  "confirmation": {
+    "title": "Confirm Your Booking",
+    "subtitle": "Please review your selected sessions before proceeding",
+    "payment": {
+      "title": "Select Payment Method",
+      "methods": {
+        "webpay": {
+          "name": "WebPay",
+          "description": "Pay with debit, credit card or prepaid"
+        },
+        "fintoc": {
+          "name": "Fintoc",
+          "description": "Direct bank transfer"
+        },
+        "mercadopago": {
+          "name": "MercadoPago",
+          "description": "Multiple payment methods"
+        }
+      }
+    }
+  },
+  "success": {
+    "title": "Booking Confirmed!",
+    "subtitle": "Thank you for your booking. We look forward to seeing you!",
+    "details": {
+      "title": "Booking Details",
+      "payment": {
+        "title": "Payment Information",
+        "deposit": "A deposit of ${amount} has been processed. The remaining balance will be charged after the session."
+      },
+      "important": {
+        "title": "Important Information",
+        "arrival": "Please arrive 15 minutes before your scheduled session time.",
+        "cancellation": "If you need to cancel or reschedule, please do so at least 24 hours in advance.",
+        "location": "The location details and any additional instructions will be sent to your email."
+      }
+    },
+    "actions": {
+      "bookAnother": "Book Another Session",
+      "dashboard": "Go to Dashboard"
+    }
+  },
+  "failure": {
+    "title": "Booking Failed",
+    "subtitle": "We encountered an issue while processing your booking.",
+    "defaultError": "We couldn't process your booking at this time.",
+    "whatToDo": {
+      "title": "What you can do:",
+      "retry": "Try booking again. Sometimes temporary issues can be resolved by simply retrying.",
+      "wait": "Wait a few minutes before trying again if the issue persists.",
+      "contact": "Contact support if you continue to experience issues."
+    },
+    "actions": {
+      "dashboard": "Go to Dashboard",
+      "tryAgain": "Try Again"
+    }
+  }
+} 

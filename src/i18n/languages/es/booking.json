@@ -1,0 +1,59 @@
+{
+  "confirmation": {
+    "title": "Confirma tu Reserva",
+    "subtitle": "Por favor revisa las sesiones seleccionadas antes de continuar",
+    "payment": {
+      "title": "Selecciona el Método de Pago",
+      "methods": {
+        "webpay": {
+          "name": "WebPay",
+          "description": "Paga con débito, crédito o prepago"
+        },
+        "fintoc": {
+          "name": "Fintoc",
+          "description": "Transferencia bancaria directa"
+        },
+        "mercadopago": {
+          "name": "MercadoPago",
+          "description": "Múltiples métodos de pago"
+        }
+      }
+    }
+  },
+  "success": {
+    "title": "¡Reserva Confirmada!",
+    "subtitle": "Gracias por tu reserva. ¡Esperamos verte pronto!",
+    "details": {
+      "title": "Detalles de la Reserva",
+      "payment": {
+        "title": "Información de Pago",
+        "deposit": "Se ha procesado un depósito de ${amount}. El saldo restante se cobrará después de la sesión."
+      },
+      "important": {
+        "title": "Información Importante",
+        "arrival": "Por favor llega 15 minutos antes de tu hora programada.",
+        "cancellation": "Si necesitas cancelar o reprogramar, hazlo con al menos 24 horas de anticipación.",
+        "location": "Los detalles de la ubicación y las instrucciones adicionales se enviarán a tu correo."
+      }
+    },
+    "actions": {
+      "bookAnother": "Reservar Otra Sesión",
+      "dashboard": "Ir al Panel"
+    }
+  },
+  "failure": {
+    "title": "Error en la Reserva",
+    "subtitle": "Encontramos un problema al procesar tu reserva.",
+    "defaultError": "No pudimos procesar tu reserva en este momento.",
+    "whatToDo": {
+      "title": "Qué puedes hacer:",
+      "retry": "Intenta reservar nuevamente. A veces los problemas temporales se resuelven simplemente reintentando.",
+      "wait": "Espera unos minutos antes de intentar nuevamente si el problema persiste.",
+      "contact": "Contacta a soporte si continúas experimentando problemas."
+    },
+    "actions": {
+      "dashboard": "Ir al Panel",
+      "tryAgain": "Intentar Nuevamente"
+    }
+  }
+} 

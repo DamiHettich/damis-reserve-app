@@ -1,0 +1,74 @@
+{
+  "dashboard": {
+    "title": "Your Appointments",
+    "metrics": {
+      "totalAppointments": "Total Appointments",
+      "cancelled": "Cancelled",
+      "totalSpent": "Total Spent"
+    },
+    "bookings": {
+      "status": {
+        "upcoming": "Upcoming",
+        "past": "Past",
+        "cancelled": "Cancelled"
+      },
+      "actions": {
+        "cancel": "Cancel Appointment"
+      },
+      "price": "Price"
+    }
+  },
+  "profile": {
+    "title": "Your Profile",
+    "actions": {
+      "edit": "Edit Profile",
+      "cancel": "Cancel",
+      "save": "Save Changes"
+    },
+    "fields": {
+      "name": {
+        "label": "Name"
+      },
+      "email": {
+        "label": "Email"
+      },
+      "phone": {
+        "label": "Phone"
+      },
+      "notifications": {
+        "title": "Notifications",
+        "email": "Email notifications",
+        "sms": "SMS notifications"
+      }
+    }
+  },
+  "calendar": {
+    "title": "Book a Session",
+    "subtitle": "Select one or more available time slots for your session",
+    "slot": {
+      "available": "Available",
+      "price": "Price"
+    },
+    "selectedSessions": {
+      "title": "Selected Sessions",
+      "session": "Session",
+      "total": "Total"
+    },
+    "actions": {
+      "checkout": "Proceed to Checkout"
+    },
+    "errors": {
+      "noSelection": "Please select at least one time slot"
+    },
+    "navigation": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "views": {
+      "today": "Today"
+    },
+    "messages": {
+      "noEvents": "No events in this range"
+    }
+  }
+} 

@@ -1,0 +1,74 @@
+{
+  "dashboard": {
+    "title": "Tus Citas",
+    "metrics": {
+      "totalAppointments": "Total de Citas",
+      "cancelled": "Canceladas",
+      "totalSpent": "Total Gastado"
+    },
+    "bookings": {
+      "status": {
+        "upcoming": "Próxima",
+        "past": "Terminada",
+        "cancelled": "Cancelada"
+      },
+      "actions": {
+        "cancel": "Cancelar"
+      },
+      "price": "Precio"
+    }
+  },
+  "profile": {
+    "title": "Tu Perfil",
+    "actions": {
+      "edit": "Editar Perfil",
+      "cancel": "Cancelar",
+      "save": "Guardar Cambios"
+    },
+    "fields": {
+      "name": {
+        "label": "Nombre"
+      },
+      "email": {
+        "label": "Correo Electrónico"
+      },
+      "phone": {
+        "label": "Teléfono"
+      },
+      "notifications": {
+        "title": "Notificaciones",
+        "email": "Notificaciones por correo",
+        "sms": "Notificaciones por SMS"
+      }
+    }
+  },
+  "calendar": {
+    "title": "Reservar una Sesión",
+    "subtitle": "Selecciona uno o más horarios disponibles para tu sesión",
+    "slot": {
+      "available": "Disponible",
+      "price": "Precio"
+    },
+    "selectedSessions": {
+      "title": "Sesiones Seleccionadas",
+      "session": "Sesión",
+      "total": "Total"
+    },
+    "actions": {
+      "checkout": "Proceder al Pago"
+    },
+    "errors": {
+      "noSelection": "Por favor selecciona al menos un horario"
+    },
+    "navigation": {
+      "previous": "Anterior",
+      "next": "Siguiente"
+    },
+    "views": {
+      "today": "Hoy"
+    },
+    "messages": {
+      "noEvents": "No hay eventos en este rango"
+    }
+  }
+} 

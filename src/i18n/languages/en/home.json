@@ -1,0 +1,69 @@
+{
+  "hero": {
+    "title": "Welcome to ReservApp",
+    "subtitle": "Experience personalized coaching sessions that transform your approach to technology and programming",
+    "bookButton": "Book a Session"
+  },
+  "services": {
+    "title": "What I Offer",
+    "subtitle": "Tailored coaching sessions to help you excel in your tech journey",
+    "coaching": {
+      "title": "1:1 Coaching",
+      "description": "Personalized sessions focused on your specific learning goals and challenges"
+    },
+    "codeReview": {
+      "title": "Code Review",
+      "description": "Expert review of your code with actionable feedback and best practices"
+    },
+    "career": {
+      "title": "Career Guidance",
+      "description": "Strategic advice to help you navigate your tech career path"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "imageAlt": "Damian",
+    "description1": "Hi, I'm Damian! With over X years of experience in software development, I'm passionate about helping others grow in their tech journey. My approach combines practical coding expertise with a deep understanding of modern development practices.",
+    "description2": "Whether you're starting your programming journey or looking to level up your skills, I'm here to provide personalized guidance and support."
+  },
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Book your first session and take the next step in your tech journey",
+    "button": "View Available Sessions"
+  },
+  "testimonials": {
+    "loading": "Loading testimonials...",
+    "error": "Failed to load testimonials",
+    "title": "What Others Say",
+    "rating": {
+      "alt": "Star rating"
+    },
+    "authorImageAlt": "Profile picture of {{author}}",
+    "clientSince": "Client since {{year}}"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": {
+      "security": {
+        "question": "Is my data secure?",
+        "answer": "Yes, your data is fully encrypted and secure. We use industry-standard security protocols to protect your personal information and never share it with third parties."
+      },
+      "payment": {
+        "question": "When do I need to pay?",
+        "answer": "Payment is required at the time of booking to confirm your appointment. You can cancel or reschedule up to 24 hours before your session for a full refund."
+      },
+      "methods": {
+        "question": "What payment methods do you accept?",
+        "answer": "We accept all major credit cards, PayPal, and bank transfers. All payments are processed through secure payment gateways."
+      },
+      "cancellation": {
+        "question": "What is your cancellation policy?",
+        "answer": "You can cancel or reschedule your appointment up to 24 hours before the scheduled time for a full refund. Late cancellations may be subject to a fee."
+      },
+      "rescheduling": {
+        "question": "How can I reschedule my session?",
+        "answer": "You can easily reschedule your session through your dashboard up to 24 hours before the appointment. Simply select a new available time slot."
+      }
+    }
+  }
+} 

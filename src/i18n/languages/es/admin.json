@@ -1,0 +1,144 @@
+{
+  "booking": {
+    "title": "Gestión de Reservas",
+    "search": "Buscar reservas...",
+    "filters": {
+      "allStatus": "Todos los Estados",
+      "confirmed": "Confirmada",
+      "pending": "Pendiente",
+      "cancelled": "Cancelada",
+      "completed": "Completada",
+      "noShow": "No Asistió"
+    },
+    "table": {
+      "customer": "Cliente",
+      "date": "Fecha",
+      "service": "Servicio",
+      "status": "Estado",
+      "payment": "Pago",
+      "actions": "Acciones"
+    },
+    "actions": {
+      "contact": "Contactar",
+      "remind": "Recordar",
+      "cancel": "Cancelar Reserva"
+    },
+    "details": {
+      "title": "Detalles de la Reserva",
+      "customerInfo": "Información del Cliente",
+      "bookingStatus": "Estado de la Reserva",
+      "notes": "Notas",
+      "contactCustomer": "Contactar Cliente",
+      "sendReminder": "Enviar Recordatorio"
+    },
+    "status": {
+      "confirmed": "Confirmado",
+      "pending": "Pendiente",
+      "cancelled": "Cancelado",
+      "completed": "Completado",
+      "no-show": "No Asistió",
+      "paid": "Pagado",
+      "refunded": "Reembolsado"
+    },
+    "paymentStatus": {
+      "paid": "Pagado",
+      "pending": "Pendiente",
+      "refunded": "Reembolsado"
+    }
+  },
+  "calendar": {
+    "title": "Gestión de Calendario",
+    "selectedBooking": "Reserva Seleccionada",
+    "upcomingBookings": "Próximas Reservas",
+    "fields": {
+      "customer": "Cliente",
+      "email": "Correo",
+      "date": "Fecha",
+      "time": "Hora",
+      "price": "Precio",
+      "status": "Estado"
+    },
+    "actions": {
+      "cancelBooking": "Cancelar Reserva",
+      "sendReminder": "Enviar Recordatorio"
+    },
+    "views": {
+      "week": "Semana",
+      "day": "Día",
+      "today": "Hoy"
+    },
+    "navigation": {
+      "previous": "Anterior",
+      "next": "Siguiente"
+    },
+    "messages": {
+      "noEvents": "No hay citas en este rango de tiempo"
+    }
+  },
+  "availability": {
+    "title": "Horario de Disponibilidad",
+    "slotTitle": "Disponible",
+    "instructions": {
+      "title": "Instrucciones",
+      "items": [
+        "Haz clic en el calendario para alternar la disponibilidad de ese horario",
+        "Los espacios azules indican horarios disponibles",
+        "Haz clic nuevamente en un espacio azul para eliminarlo",
+        "El horario se repetirá semanalmente"
+      ]
+    },
+    "actions": {
+      "reset": "Reiniciar",
+      "save": "Guardar Horario"
+    },
+    "unsavedChanges": "Tienes cambios sin guardar"
+  },
+  "configuration": {
+    "title": "Configuración de la Aplicación",
+    "actions": {
+      "save": "Guardar Cambios"
+    },
+    "sections": {
+      "slots": {
+        "title": "Horarios",
+        "duration": "Duración del Horario (minutos)",
+        "operatingHours": "Horario de Operación",
+        "durations": {
+          "30": "30 minutos",
+          "60": "1 hora",
+          "90": "1.5 horas",
+          "120": "2 horas"
+        }
+      },
+      "pricing": {
+        "title": "Precios",
+        "basePrice": "Precio Base",
+        "reservationFee": "Tarifa de Reserva",
+        "cancellationFee": "Tarifa de Cancelación"
+      },
+      "cancellation": {
+        "title": "Política de Cancelación",
+        "deadline": "Plazo de Cancelación (horas)",
+        "lateFee": "Tarifa por Cancelación Tardía",
+        "cutoff": "Límite de Cancelación (horas)"
+      },
+      "theme": {
+        "title": "Colores",
+        "colors": {
+          "primary": "Color Primario",
+          "secondary": "Color Secundario",
+          "accent": "Color de Acento"
+        }
+      },
+      "notifications": {
+        "title": "Notificaciones",
+        "email": "Notificaciones por Correo",
+        "whatsapp": "Notificaciones por WhatsApp",
+        "reminderTimes": "Tiempos de Recordatorio (horas antes de la cita)",
+        "addReminder": "Agregar Recordatorio",
+        "beforeAppointment": "antes de la cita",
+        "removeReminder": "Eliminar recordatorio"
+      }
+    }
+  }
+} 

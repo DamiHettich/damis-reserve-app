@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "title": "Bienvenido a ReservApp",
+    "subtitle": "Experimenta sesiones de coaching personalizadas que transforman tu enfoque de la tecnología y la programación",
+    "bookButton": "Reservar una Sesión"
+  },
+  "services": {
+    "title": "Lo que Ofrezco",
+    "subtitle": "Sesiones de coaching personalizadas para ayudarte a sobresalir en tu viaje tecnológico",
+    "coaching": {
+      "title": "Coaching 1:1",
+      "description": "Sesiones personalizadas enfocadas en tus objetivos y desafíos específicos de aprendizaje"
+    },
+    "codeReview": {
+      "title": "Revisión de Código",
+      "description": "Revisión experta de tu código con retroalimentación práctica y mejores prácticas"
+    },
+    "career": {
+      "title": "Orientación Profesional",
+      "description": "Consejos estratégicos para ayudarte a navegar tu carrera en tecnología"
+    }
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "imageAlt": "Damian",
+    "description1": "¡Hola, soy Damian! Con más de X años de experiencia en desarrollo de software, me apasiona ayudar a otros a crecer en su viaje tecnológico. Mi enfoque combina experiencia práctica en programación con una comprensión profunda de las prácticas modernas de desarrollo.",
+    "description2": "Ya sea que estés comenzando tu viaje en programación o buscando mejorar tus habilidades, estoy aquí para brindarte orientación y apoyo personalizado."
+  },
+  "cta": {
+    "title": "¿Listo para Empezar?",
+    "subtitle": "Reserva tu primera sesión y da el siguiente paso en tu viaje tecnológico",
+    "button": "Ver Sesiones Disponibles"
+  },
+  "testimonials": {
+    "loading": "Cargando testimonios...",
+    "error": "Error al cargar los testimonios",
+    "title": "Lo que Dicen Otros"
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "items": {
+      "security": {
+        "question": "¿Están seguros mis datos?",
+        "answer": "Sí, tus datos están completamente encriptados y seguros. Utilizamos protocolos de seguridad estándar de la industria para proteger tu información personal y nunca la compartimos con terceros."
+      },
+      "payment": {
+        "question": "¿Cuándo debo pagar?",
+        "answer": "El pago se requiere al momento de la reserva para confirmar tu cita. Puedes cancelar o reprogramar hasta 24 horas antes de tu sesión para un reembolso completo."
+      },
+      "methods": {
+        "question": "¿Qué métodos de pago aceptan?",
+        "answer": "Aceptamos todas las tarjetas de crédito principales, PayPal y transferencias bancarias. Todos los pagos se procesan a través de pasarelas de pago seguras."
+      },
+      "cancellation": {
+        "question": "¿Cuál es la política de cancelación?",
+        "answer": "Puedes cancelar o reprogramar tu cita hasta 24 horas antes de la hora programada para un reembolso completo. Las cancelaciones tardías pueden estar sujetas a un cargo."
+      },
+      "rescheduling": {
+        "question": "¿Cómo puedo reprogramar mi sesión?",
+        "answer": "Puedes reprogramar fácilmente tu sesión a través de tu panel de control hasta 24 horas antes de la cita. Simplemente selecciona un nuevo horario disponible."
+      }
+    }
+  }
+} 

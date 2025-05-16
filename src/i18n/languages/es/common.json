@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "calendar": "Calendario",
+    "dashboard": "Mis Citas",
+    "profile": "Perfil",
+    "admin": {
+      "calendar": "Calendario",
+      "bookings": "Reservas",
+      "availability": "Disponibilidad",
+      "configuration": "Configuración"
+    }
+  },
+  "auth": {
+    "login": "Iniciar Sesión",
+    "signup": "Registrarse",
+    "logout": "Cerrar Sesión"
+  },
+  "buttons": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "back": "Volver"
+  }
+} 
