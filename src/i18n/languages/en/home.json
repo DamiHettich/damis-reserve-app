@@ -5,6 +5,7 @@
     "bookButton": "Book a Session"
   },
   "services": {
+    "eyebrow": "My Services",
     "title": "What I Offer",
     "subtitle": "Tailored coaching sessions to help you excel in your tech journey",
     "coaching": {

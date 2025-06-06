@@ -5,6 +5,7 @@
     "bookButton": "Reservar una Sesión"
   },
   "services": {
+    "eyebrow": "Nuestros Servicios",
     "title": "Lo que Ofrezco",
     "subtitle": "Sesiones de coaching personalizadas para ayudarte a sobresalir en tu viaje tecnológico",
     "coaching": {

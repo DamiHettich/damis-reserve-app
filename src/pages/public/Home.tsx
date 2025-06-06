@@ -1,84 +1,92 @@
 import { useTranslation } from 'react-i18next';
 import FAQ from '../../components/home/FAQ';
+import { Link } from 'react-router-dom';
+import { Zap, Users, Briefcase, ArrowRight } from 'lucide-react';
 
 export default function Home() {
   const { t } = useTranslation('home');
 
+  const services = [
+    {
+      id: 'coaching',
+      icon: <Zap className="w-8 h-8 text-primary mb-4" />,
+      title: t('services.coaching.title'),
+      description: t('services.coaching.description'),
+    },
+    {
+      id: 'codeReview',
+      icon: <Users className="w-8 h-8 text-primary mb-4" />,
+      title: t('services.codeReview.title'),
+      description: t('services.codeReview.description'),
+    },
+    {
+      id: 'career',
+      icon: <Briefcase className="w-8 h-8 text-primary mb-4" />,
+      title: t('services.career.title'),
+      description: t('services.career.description'),
+    },
+  ];
+
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <div className="py-20 text-center">
-        <h1 className="text-5xl font-bold text-gray-900 mb-6">
-          {t('hero.title')}
-        </h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-          {t('hero.subtitle')}
-        </p>
-        <a
-          href="/calendar"
-          className="inline-block bg-primary-600 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-primary-700 transition-colors"
-        >
-          {t('hero.bookButton')}
-        </a>
-      </div>
+      <section className="py-20 md:py-28 lg:py-32 text-center bg-gradient-to-br from-primary/5 via-transparent to-primary/10 dark:from-primary/10 dark:via-background dark:to-primary/20">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 animate-fade-in-up">
+            {t('hero.title')}
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-in-up [animation-delay:200ms]">
+            {t('hero.subtitle')}
+          </p>
+          <Link
+            to="/calendar"
+            className="btn-primary animate-fade-in-up [animation-delay:400ms] inline-flex items-center px-6 py-3 text-lg font-medium rounded-md"
+          >
+            {t('hero.bookButton')}
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
+        </div>
+      </section>
 
       {/* Services Section */}
-      <div className="py-16 bg-gray-50 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            {t('services.title')}
-          </h2>
-          <p className="text-gray-600">
-            {t('services.subtitle')}
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <div className="text-primary-600 mb-4">
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
-              {t('services.coaching.title')}
-            </h3>
-            <p className="text-gray-600">
-              {t('services.coaching.description')}
+      <section className="section py-16 md:py-20 lg:py-24 bg-background-alt dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <span className="text-sm text-primary font-medium uppercase tracking-wider">
+              {t('services.eyebrow')}
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mt-2 mb-4">
+              {t('services.title')}
+            </h2>
+            <p className="text-muted-foreground">
+              {t('services.subtitle')}
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <div className="text-primary-600 mb-4">
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
-              {t('services.codeReview.title')}
-            </h3>
-            <p className="text-gray-600">
-              {t('services.codeReview.description')}
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <div className="text-primary-600 mb-4">
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M4.649 3.084A1 1 0 015.163 4.4 13.95 13.95 0 004 10c0 1.993.416 3.886 1.164 5.6a1 1 0 01-1.832.8A15.95 15.95 0 012 10c0-2.274.475-4.44 1.332-6.4a1 1 0 011.317-.516zM12.96 7a3 3 0 00-2.342 1.126l-.328.41-.111-.279A2 2 0 008.323 7H8a1 1 0 000 2h.323l.532 1.33-1.035 1.295a1 1 0 01-.781.375H7a1 1 0 100 2h.039a3 3 0 002.342-1.126l.328-.41.111.279A2 2 0 0011.677 14H12a1 1 0 100-2h-.323l-.532-1.33 1.035-1.295A1 1 0 0112.961 9H13a1 1 0 100-2h-.039zm1.874-2.6a1 1 0 011.833-.8A15.95 15.95 0 0118 10c0 2.274-.475 4.44-1.332 6.4a1 1 0 11-1.832-.8A13.95 13.95 0 0016 10c0-1.993-.416-3.886-1.164-5.6z" clipRule="evenodd" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
-              {t('services.career.title')}
-            </h3>
-            <p className="text-gray-600">
-              {t('services.career.description')}
-            </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div 
+                key={service.id} 
+                className="bg-card dark:bg-gray-800 p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center animate-fade-in"
+                style={{ animationDelay: `${(index + 1) * 100}ms` }}
+              >
+                {service.icon}
+                <h3 className="text-xl lg:text-2xl font-semibold text-gray-900 dark:text-white mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground dark:text-gray-300 text-sm">
+                  {service.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      <FAQ />
+      {/* FAQ Section */}
+      <section className="section-faq bg-white dark:bg-background">
+        <FAQ />
+      </section>
     </div>
   );
 }

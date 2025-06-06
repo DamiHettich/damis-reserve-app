@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 
 interface FAQItem {
   id: string;
@@ -40,39 +41,32 @@ export default function FAQ() {
   ];
 
   return (
-    <div className="py-16">
-      <div className="mx-auto">
-        <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
-          {t('faq.title')}
-        </h2>
-        <div className="space-y-4">
+    <div className="py-16 md:py-20 lg:py-24">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            {t('faq.title')}
+          </h2>
+        </div>
+        <div className="max-w-2xl mx-auto space-y-4">
           {faqs.map((faq) => (
-            <div key={faq.id} className="border rounded-lg">
+            <div key={faq.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
               <button
-                className="w-full px-6 py-4 flex justify-between items-center text-left"
+                className="w-full px-6 py-4 flex justify-between items-center text-left focus:outline-none"
                 onClick={() => setOpenItem(openItem === faq.id ? null : faq.id)}
                 aria-expanded={openItem === faq.id}
+                aria-controls={`faq-answer-${faq.id}`}
               >
-                <span className="font-medium text-gray-900">{faq.question}</span>
-                <svg
-                  className={`w-5 h-5 text-gray-500 transform transition-transform ${
+                <span className="font-medium text-lg text-gray-900 dark:text-white">{faq.question}</span>
+                <ChevronDown
+                  className={`w-6 h-6 text-primary transform transition-transform duration-300 ${
                     openItem === faq.id ? 'rotate-180' : ''
                   }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
+                />
               </button>
               {openItem === faq.id && (
-                <div className="px-6 pb-4">
-                  <p className="text-gray-600">{faq.answer}</p>
+                <div id={`faq-answer-${faq.id}`} className="px-6 pb-6 pt-2">
+                  <p className="text-muted-foreground dark:text-gray-300">{faq.answer}</p>
                 </div>
               )}
             </div>
