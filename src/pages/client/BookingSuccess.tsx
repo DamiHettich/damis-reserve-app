@@ -1,4 +1,5 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useLocalizedNavigate } from '../../hooks/useLocalizedNavigate';
 import { format } from 'date-fns';
 import type { TimeSlot } from '../../types/calendar';
 
@@ -13,7 +14,7 @@ interface LocationState {
 
 export default function BookingSuccess() {
   const location = useLocation();
-  const navigate = useNavigate();
+  const localizedNavigate = useLocalizedNavigate();
   const { bookingDetails } = location.state as LocationState;
 
   return (
@@ -86,13 +87,13 @@ export default function BookingSuccess() {
             {/* Actions */}
             <div className="flex justify-between pt-6">
               <button
-                onClick={() => navigate('/calendar')}
+                onClick={() => localizedNavigate('/calendar')}
                 className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors"
               >
                 Book Another Session
               </button>
               <button
-                onClick={() => navigate('/dashboard')}
+                onClick={() => localizedNavigate('/dashboard')}
                 className="px-6 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-colors"
               >
                 Go to Dashboard

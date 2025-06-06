@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useLocalizedNavigate } from '../../hooks/useLocalizedNavigate';
 import { format } from 'date-fns';
 import type { TimeSlot } from '../../types/calendar';
 
@@ -39,7 +40,7 @@ type PaymentMethodId = typeof PAYMENT_METHODS[number]['id'];
 
 export default function BookingConfirmation() {
   const location = useLocation();
-  const navigate = useNavigate();
+  const localizedNavigate = useLocalizedNavigate();
   const { selectedSlots, returnPath } = location.state as LocationState;
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -55,8 +56,7 @@ export default function BookingConfirmation() {
       // TODO: Implement payment processing and booking confirmation
       await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate API call
       
-      // Navigate to success page or show success message
-      navigate('/booking/success', {
+      localizedNavigate('/booking/success', {
         state: {
           bookingDetails: {
             slots: selectedSlots,
@@ -64,7 +64,7 @@ export default function BookingConfirmation() {
           }
         }
       });
-    } catch (err) {
+    } catch {
       setError('Failed to process booking. Please try again.');
     } finally {
       setIsProcessing(false);
@@ -165,7 +165,7 @@ export default function BookingConfirmation() {
 
             <div className="flex justify-end space-x-4 m-4">
               <button
-                onClick={() => navigate(returnPath)}
+                onClick={() => localizedNavigate(returnPath)}
                 className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors"
               >
                 Back

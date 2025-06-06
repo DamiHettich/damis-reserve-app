@@ -1,4 +1,5 @@
-import { Link, useLocation } from 'react-router-dom';
+import LocalizedLink from '../LocalizedLink';
+import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../context/AuthContext';
 
@@ -84,6 +85,10 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
 
   const menuItems = user?.role === 'admin' ? adminMenuItems : clientMenuItems;
 
+  const isActive = (itemPath: string) => {
+    return location.pathname.endsWith(itemPath);
+  };
+
   return (
     <>
       {/* Mobile backdrop */}
@@ -108,18 +113,19 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
 
         <nav className="mt-5 px-2">
           {menuItems.map((item) => (
-            <Link
+            <LocalizedLink
               key={item.path}
               to={item.path}
               className={`${
-                location.pathname === item.path
+                isActive(item.path)
                   ? 'bg-gray-100 text-gray-900'
                   : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
               } group flex items-center px-2 py-2 text-base font-medium rounded-md mb-1`}
+              onClick={onClose}
             >
               <span className="mr-4">{item.icon}</span>
               {item.label}
-            </Link>
+            </LocalizedLink>
           ))}
         </nav>
       </div>

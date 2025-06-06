@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Calendar as BigCalendar, dateFnsLocalizer } from 'react-big-calendar';
+import { useLocalizedNavigate } from '../../hooks/useLocalizedNavigate';
+import { Calendar as BigCalendar, dateFnsLocalizer, Event as BigCalendarEvent } from 'react-big-calendar';
 import { format, parse, startOfWeek, getDay } from 'date-fns';
 import { useTranslation } from 'react-i18next';
 import es from 'date-fns/locale/es';
@@ -21,8 +21,14 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
+// Define a more specific type for the calendar event passed to onSelectEvent
+interface CalendarEvent extends BigCalendarEvent {
+  resource: TimeSlot;
+  className?: string;
+}
+
 export default function Calendar() {
-  const navigate = useNavigate();
+  const localizedNavigate = useLocalizedNavigate();
   const { t, i18n } = useTranslation('client');
   const locale = i18n.language === 'es' ? es : enUS;
   const [selectedSlots, setSelectedSlots] = useState<TimeSlot[]>([]);
@@ -46,7 +52,7 @@ export default function Calendar() {
     }
   ];
 
-  const events = mockAvailableSlots.map(slot => ({
+  const events: CalendarEvent[] = mockAvailableSlots.map(slot => ({
     id: slot.id,
     title: `${t('calendar.slot.available')} - $${slot.price}`,
     start: new Date(slot.start),
@@ -55,8 +61,8 @@ export default function Calendar() {
     className: selectedSlots.some(s => s.id === slot.id) ? 'selected-event' : ''
   }));
 
-  const handleSelectEvent = (event: any) => {
-    const slot = event.resource as TimeSlot;
+  const handleSelectEvent = (event: CalendarEvent) => {
+    const slot = event.resource;
     
     if (selectedSlots.some(s => s.id === slot.id)) {
       setSelectedSlots(selectedSlots.filter(s => s.id !== slot.id));
@@ -73,7 +79,7 @@ export default function Calendar() {
       return;
     }
 
-    navigate('/booking/confirm', { 
+    localizedNavigate('/booking/confirm', {
       state: { 
         selectedSlots,
         returnPath: '/calendar'
@@ -99,7 +105,7 @@ export default function Calendar() {
           min={new Date(0, 0, 0, 7, 0, 0)} // 7 AM
           max={new Date(0, 0, 0, 23, 0, 0)} // 11 PM
           style={{ height: 600 }}
-          onSelectEvent={handleSelectEvent}
+          onSelectEvent={handleSelectEvent as (event: BigCalendarEvent, e: React.SyntheticEvent<HTMLElement>) => void}
           culture={i18n.language === 'es' ? 'es' : 'en-US'}
           messages={{
             week: t('calendar.views.week'),
@@ -108,7 +114,7 @@ export default function Calendar() {
             next: t('calendar.navigation.next'),
             noEventsInRange: t('calendar.messages.noEvents')
           }}
-          eventPropGetter={(event) => ({
+          eventPropGetter={(event: CalendarEvent) => ({
             className: event.className,
             style: {
               backgroundColor: event.className === 'selected-event' ? '#4F46E5' : '#6366F1',

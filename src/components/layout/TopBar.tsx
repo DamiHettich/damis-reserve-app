@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import LocalizedLink from '../LocalizedLink';
 
 interface TopBarProps {
   onMenuClick: () => void;
@@ -59,13 +59,13 @@ export default function TopBar({ onMenuClick }: TopBarProps) {
               </div>
               
               {user?.role === 'client' && (
-                <Link
+                <LocalizedLink
                   to="/profile"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t('nav.profile')}
-                </Link>
+                </LocalizedLink>
               )}
 
               <button

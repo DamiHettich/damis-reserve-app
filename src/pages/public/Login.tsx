@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocalizedNavigate } from '../../hooks/useLocalizedNavigate';
 import { useAuth } from '../../context/AuthContext';
 import { useTranslation } from 'react-i18next';
 
 export default function Login() {
   const { login } = useAuth();
-  const navigate = useNavigate();
+  const localizedNavigate = useLocalizedNavigate();
   const { t } = useTranslation('auth');
   const [isLoading, setIsLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState('');
@@ -22,7 +22,7 @@ export default function Login() {
         name: role === 'admin' ? 'Admin' : 'User',
         role: role
       });
-      navigate(role === 'admin' ? '/admin/calendar' : '/calendar');
+      localizedNavigate(role === 'admin' ? '/admin/calendar' : '/calendar');
     } finally {
       setIsLoading(false);
       setLoadingMessage('');

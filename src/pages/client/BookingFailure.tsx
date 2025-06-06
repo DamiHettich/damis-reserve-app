@@ -1,4 +1,5 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useLocalizedNavigate } from '../../hooks/useLocalizedNavigate';
 
 interface LocationState {
   error?: string;
@@ -7,7 +8,7 @@ interface LocationState {
 
 export default function BookingFailure() {
   const location = useLocation();
-  const navigate = useNavigate();
+  const localizedNavigate = useLocalizedNavigate();
   const { error, returnPath = '/calendar' } = location.state as LocationState || {};
 
   const defaultErrorMessage = "We couldn't process your booking at this time.";
@@ -96,13 +97,13 @@ export default function BookingFailure() {
             {/* Actions */}
             <div className="flex justify-between pt-6">
               <button
-                onClick={() => navigate('/dashboard')}
+                onClick={() => localizedNavigate('/dashboard')}
                 className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors"
               >
                 Go to Dashboard
               </button>
               <button
-                onClick={() => navigate(returnPath)}
+                onClick={() => localizedNavigate(returnPath)}
                 className="px-6 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-colors"
               >
                 Try Again

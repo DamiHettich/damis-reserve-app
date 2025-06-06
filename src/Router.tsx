@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useParams } from 'react-router-dom';
 import { useAuth } from './context/AuthContext';
 import MainLayout from './components/layout/MainLayout';
 import Home from './pages/public/Home';
@@ -15,13 +15,17 @@ import BookingConfirmation from './pages/client/BookingConfirmation';
 import BookingSuccess from './pages/client/BookingSuccess';
 import BookingFailure from './pages/client/BookingFailure';
 import DashboardLayout from './components/layout/DashboardLayout';
+import LanguageHandler from './components/LanguageHandler';
+
+const defaultLanguage = 'es';
 
 // Protected Route wrapper component
 function ProtectedRoute({ children, allowedRoles }: { children: ReactNode, allowedRoles: string[] }) {
   const { isAuthenticated, user } = useAuth();
+  const { lang } = useParams<{ lang: string }>();
   
-  if (!isAuthenticated) return <Navigate to="/login" />;
-  if (!user || !allowedRoles.includes(user.role)) return <Navigate to="/" />;
+  if (!isAuthenticated) return <Navigate to={`/${lang || defaultLanguage}/login`} />;
+  if (!user || !allowedRoles.includes(user.role)) return <Navigate to={`/${lang || defaultLanguage}/`} />;
   
   return <>{children}</>;
 }
@@ -29,99 +33,99 @@ function ProtectedRoute({ children, allowedRoles }: { children: ReactNode, allow
 export default function Router() {
   return (
     <Routes>
-      <Route element={<MainLayout />}>
-        {/* Public Routes */}
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-      </Route>
-      <Route element={<DashboardLayout />}>
-        {/* Protected Client Routes */}
-        <Route
-            path="/calendar"
-            element={
-              <ProtectedRoute allowedRoles={['client', 'admin']}>
-                <Calendar />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/booking/confirm"
-            element={
-              <ProtectedRoute allowedRoles={['client', 'admin']}>
-                <BookingConfirmation />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/booking/success"
-            element={
-              <ProtectedRoute allowedRoles={['client', 'admin']}>
-                <BookingSuccess />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/booking/failure"
-            element={
-              <ProtectedRoute allowedRoles={['client', 'admin']}>
-                <BookingFailure />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute allowedRoles={['client', 'admin']}>
-                <Dashboard />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/profile"
-            element={
-              <ProtectedRoute allowedRoles={['client', 'admin']}>
-                <Profile />
-              </ProtectedRoute>
-            }
-          />
+      <Route path="/" element={<Navigate to={`/${defaultLanguage}/`} replace />} />
 
-          {/* Protected Admin Routes */}
+      <Route path="/:lang" element={<LanguageHandler />}>
+        <Route element={<MainLayout />}>
+          {/* Public Routes */}
+          <Route path="" element={<Home />} />
+          <Route path="login" element={<Login />} />
+        </Route>
+        <Route element={<DashboardLayout />}>
+          {/* Protected Client Routes */}
           <Route
-            path="/admin/calendar"
-            element={
-              <ProtectedRoute allowedRoles={['admin']}>
-                <AdminCalendar />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/availability"
-            element={
-              <ProtectedRoute allowedRoles={['admin']}>
-                <AdminAvailability />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/bookings"
-            element={
-              <ProtectedRoute allowedRoles={['admin']}>
-                <AdminBookings />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/configuration"
-            element={
-              <ProtectedRoute allowedRoles={['admin']}>
-                <Configuration />
-              </ProtectedRoute>
-            }
-          />
-        
-      
+              path="calendar"
+              element={
+                <ProtectedRoute allowedRoles={['client', 'admin']}>
+                  <Calendar />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="booking/confirm"
+              element={
+                <ProtectedRoute allowedRoles={['client', 'admin']}>
+                  <BookingConfirmation />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="booking/success"
+              element={
+                <ProtectedRoute allowedRoles={['client', 'admin']}>
+                  <BookingSuccess />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="booking/failure"
+              element={
+                <ProtectedRoute allowedRoles={['client', 'admin']}>
+                  <BookingFailure />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="dashboard"
+              element={
+                <ProtectedRoute allowedRoles={['client', 'admin']}>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="profile"
+              element={
+                <ProtectedRoute allowedRoles={['client', 'admin']}>
+                  <Profile />
+                </ProtectedRoute>
+              }
+            />
 
-      
+            {/* Protected Admin Routes */}
+            <Route
+              path="admin/calendar"
+              element={
+                <ProtectedRoute allowedRoles={['admin']}>
+                  <AdminCalendar />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="admin/availability"
+              element={
+                <ProtectedRoute allowedRoles={['admin']}>
+                  <AdminAvailability />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="admin/bookings"
+              element={
+                <ProtectedRoute allowedRoles={['admin']}>
+                  <AdminBookings />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="admin/configuration"
+              element={
+                <ProtectedRoute allowedRoles={['admin']}>
+                  <Configuration />
+                </ProtectedRoute>
+              }
+            />
+        </Route>
       </Route>
     </Routes>
   );
