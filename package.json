@@ -13,10 +13,13 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.77.2",
+    "@tanstack/react-query-devtools": "^5.77.2",
     "clsx": "^1.2.1",
     "date-fns": "^2.30.0",
     "i18next": "^25.1.1",
     "i18next-browser-languagedetector": "^8.1.0",
+    "lucide-react": "^0.511.0",
     "react": "^18.2.0",
     "react-big-calendar": "^1.18.0",
     "react-color": "^2.19.3",
