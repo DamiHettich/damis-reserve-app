@@ -1,7 +1,7 @@
 import LocalizedLink from '../LocalizedLink';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../hooks/useAuth';
 
 interface SidebarProps {
   open: boolean;

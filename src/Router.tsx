@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { Routes, Route, Navigate, useParams } from 'react-router-dom';
-import { useAuth } from './context/AuthContext';
+import { useAuth } from './hooks/useAuth';
 import MainLayout from './components/layout/MainLayout';
 import Home from './pages/public/Home';
 import Login from './pages/public/Login';

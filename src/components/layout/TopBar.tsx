@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 import LocalizedLink from '../LocalizedLink';
 
