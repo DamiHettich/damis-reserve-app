@@ -69,12 +69,6 @@ export default function Navbar() {
                 >
                   {t('auth.login')}
                 </Link>
-                <Link
-                  to="/signup"
-                  className="border border-primary-600 text-primary-600 px-4 py-2 rounded-md hover:bg-primary-200"
-                >
-                  {t('auth.signup')}
-                </Link>
               </>
             )}
           </div>
