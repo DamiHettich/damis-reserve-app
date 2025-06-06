@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { AuthState, User } from '../types';
 
 interface AuthContextType extends AuthState {
@@ -12,10 +12,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [authState, setAuthState] = useState<AuthState>({
     user: null,
     isAuthenticated: false,
-    isLoading: false,
+    isLoading: true,
   });
 
+  useEffect(() => {
+    const token = localStorage.getItem('authToken');
+
+    if (token) {
+      const fakeUser: User = { id: '1', name: 'Demo User', email: 'demo@example.com', role: 'client' };
+      login(fakeUser);
+    } else {
+      setAuthState(prev => ({ ...prev, isLoading: false }));
+    }
+  }, []);
+
   const login = (user: User) => {
+    localStorage.setItem('authToken', 'fake-jwt-token');
     setAuthState({ 
       user: { ...user }, 
       isAuthenticated: true, 
@@ -24,6 +36,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const logout = () => {
+    localStorage.removeItem('authToken');
     setAuthState({ user: null, isAuthenticated: false, isLoading: false });
   };
 

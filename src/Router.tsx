@@ -21,11 +21,20 @@ const defaultLanguage = 'es';
 
 // Protected Route wrapper component
 function ProtectedRoute({ children, allowedRoles }: { children: ReactNode, allowedRoles: string[] }) {
-  const { isAuthenticated, user } = useAuth();
+  const { isAuthenticated, user, isLoading } = useAuth();
   const { lang } = useParams<{ lang: string }>();
   
-  if (!isAuthenticated) return <Navigate to={`/${lang || defaultLanguage}/login`} />;
-  if (!user || !allowedRoles.includes(user.role)) return <Navigate to={`/${lang || defaultLanguage}/`} />;
+  if (isLoading) {
+    return null;
+  }
+
+  if (!isAuthenticated) {
+    return <Navigate to={`/${lang || defaultLanguage}/login`} />;
+  }
+
+  if (!user || !allowedRoles.includes(user.role)) {
+    return <Navigate to={`/${lang || defaultLanguage}/`} />;
+  }
   
   return <>{children}</>;
 }
