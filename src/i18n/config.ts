@@ -48,6 +48,13 @@ i18n
     interpolation: {
       escapeValue: false,
     },
+    detection: {
+      order: ['path', 'localStorage', 'navigator'],
+      lookupFromPathIndex: 0,
+    },
+    react: {
+      useSuspense: true,
+    },
   });
 
 export default i18n;
